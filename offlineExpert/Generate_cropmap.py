@@ -11,7 +11,7 @@ import subprocess
 
 import numpy as np
 import matplotlib.cm as cm
-import drawSvg as draw
+import drawsvg as draw
 import scipy.io as sio
 from PIL import Image
 from multiprocessing import Queue, Pool, Lock, Manager, Process
@@ -474,8 +474,8 @@ class EnvsGen:
         #                                                                                     self.map_density,Id_env))
 
         name_map = os.path.join(self.dirName_mapSet_png, 'Map_ID{:05d}.png'.format(Id_env))
-        d.setRenderSize(200, 200)  # Alternative to setPixelScale
-        d.savePng(name_map)
+        d.set_render_size(200, 200)  # Alternative to setPixelScale
+        d.save_png(name_map)
 
     def saveMap_numpy(self, Id_env, map_env):
         map_data = {"map":map_env}
